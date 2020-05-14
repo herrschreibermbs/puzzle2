@@ -1,52 +1,22 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-  <title>Puzzle</title>
-  <style type="text/css">
-   <!--
-   #box {
-   position: absolute;
-   width: 100px;
-   height: 100px;
-   background-color: #ccc;
-   }
-   -->
-  </style>
-  <head>
-<script>
-  window.onload = function() {
-  // find the element that you want to drag.
-  var box = document.getElementById('box');
-  
-  /* listen to the touchmove event,
-  every time it fires, grab the location
-  of touch and assign it to box */
-  
-  box.addEventListener('touchmove', function(e) {
-    // grab the location of touch
-    var touchLocation = e.targetTouches[0];
-    
-    // assign box new coordinates based on the touch.
-    box.style.left = touchLocation.pageX + 'px';
-    box.style.top = touchLocation.pageY + 'px';
-  })
-  
-}
-</script>
-<script>
-/* record the position of the touch
-  when released using touchend event.
-  This will be the drop position. */
-  
-  box.addEventListener('touchend', function(e) {
-    // current box position.
-    var x = parseInt(box.style.left);
-    var y = parseInt(box.style.top);
-  })
-</script>
-  </head>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drag and Drop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
 <body>
+    <h2 id="app_status">Drag status: </h2>
+    <h1>Drop Zone</h1>
+    <div id="drop_zone" ondragover="return false"></div>
+    <div id="object1" class="objects" draggable="true">Object 1</div>
+    <div id="object2" class="objects" draggable="true">Object 2</div>
+    <div id="object3" class="objects" draggable="true">Object 3</div>
 </body>
-<div id=”container”>
- <div id=”box”></div>
-</div>
+
 </html>
